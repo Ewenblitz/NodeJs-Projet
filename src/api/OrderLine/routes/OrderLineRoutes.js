@@ -1,10 +1,10 @@
 module.exports = function (app) {
   var orderline = require('../controllers/OrderLineController');
 
-  app.route('/order/{order id}/line')
+  app.route('/order/:order/line')
   .post(orderline.create_orderline);
 
-  app.route('/order/{order id}/line/{line id}')
+  app.route('/order/:order/line/:lineId')
   .put(orderline.update_orderline)
   .delete(orderline.delete_orderline);
 }
