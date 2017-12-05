@@ -5,7 +5,7 @@ module.exports = function (app) {
   .get(product.list_products)
   .post(product.create_products);
 
-  app.route('/product/{id}')
+  app.route('/product/:productId')
   .get(product.read_products)
   .put(product.update_products)
   .delete(product.delete_products);
