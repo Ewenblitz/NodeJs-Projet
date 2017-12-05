@@ -10,4 +10,7 @@ module.exports = function (app) {
   .put(order.update_orders)
   .delete(order.delete_orders);
 
+  app.route('/order/:orderId/confirm')
+  .put(order.confirm_order);
+
 }
