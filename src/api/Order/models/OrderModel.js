@@ -18,7 +18,7 @@ var Order = new Schema({
   status: {
     type: [{
       type: String,
-      enum: ['pending', 'confirm']
+      enum: ['pending', 'confirmed']
     }],
     default: ['pending']
   }

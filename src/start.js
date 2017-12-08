@@ -1,10 +1,7 @@
-import Webserver from 'app/core/webserver';
-import Connect from 'app/core/bdd/connect.js';
-
 var express = require('express'),
-    app = express();
-
-Connect.connect();
+    app = express(),
+    port = process.env.PORT || 3001,
+    mongoose = require('mongoose');
 
 var Order = require('./api/Order/models/OrderModel'),
     OrderLine = require('./api/OrderLine/models/OrderLineModel'),
@@ -12,6 +9,9 @@ var Order = require('./api/Order/models/OrderModel'),
     Dashboard = require('./api/Dashboard/models/DashboardModel');
 
 var bodyParser = require('body-parser');
+
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/BDD');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -26,8 +26,6 @@ OrderLineRoute(app);
 ProductRoute(app);
 DashboardRoute(app);
 
-Webserver.start(3001, (err) => {
-  if (!err) {
-    console.log('Serveur Web Lancé et fonctionnel');
-  }
-});
+app.listen(port);
+
+console.log('Serveur lancé');

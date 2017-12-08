@@ -11,7 +11,7 @@ exports.list_products = function(req, res) {
 
 exports.create_products = function(req, res) {
   var new_product = new Product(req.body);
-  new_task.save(function(err, task) {
+  new_product.save(function(err, task) {
     if(err)
       res.send(err);
     res.json(task);
