@@ -1,6 +1,9 @@
 import Webserver from 'app/core/webserver';
 import Connect from 'app/core/bdd/connect.js';
 
+var express = require('express'),
+    app = express();
+
 Connect.connect();
 
 var Order = require('./api/Order/models/OrderModel'),
@@ -8,7 +11,10 @@ var Order = require('./api/Order/models/OrderModel'),
     Product = require('./api/Product/models/ProductModel'),
     Dashboard = require('./api/Dashboard/models/DashboardModel');
 
-const bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 var OrderRoute = require('./api/Order/routes/OrderRoutes'),
     OrderLineRoute = require('./api/OrderLine/routes/OrderLineRoutes'),

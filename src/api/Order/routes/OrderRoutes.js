@@ -7,10 +7,10 @@ module.exports = function (app) {
 
   app.route('/order/:orderId')
   .get(order.read_orders)
-  .put(order.update_orders)
+  .post(order.update_orders)
   .delete(order.delete_orders);
-
+/*
   app.route('/order/:orderId/confirm')
-  .put(order.confirm_order);
-
+  .post(order.confirm_order);
+*/
 }

@@ -2,14 +2,26 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Order = new Schema({
-  _id: Integer,
-  code: String,
+  _id: {
+    type: Number
+  },
+  code: {
+    type: String
+  },
   date: {
-    type: date,
+    type: Date,
     default: Date.now
   },
-  total: Real,
-  status: String
+  total: {
+    type: Number
+  },
+  status: {
+    type: [{
+      type: String,
+      enum: ['pending', 'confirm']
+    }],
+    default: ['pending']
+  }
 });
 
 module.exports = mongoose.model('Order', Order);
