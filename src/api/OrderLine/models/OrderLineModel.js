@@ -1,3 +1,8 @@
+/**
+ * Mise en place du model pour les lignes de commandes (OrderLine)
+ * @alias OrderLineModel
+ * @author Ewen Lomer, Christopher Leccia, Rahpael Apruzzese
+ */
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 

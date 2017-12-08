@@ -1,3 +1,8 @@
+/**
+ * Mise en place du model pour la commande (Order)
+ * @alias OrderModel
+ * @author Ewen Lomer, Christopher Leccia, Rahpael Apruzzese
+ */
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -18,9 +23,9 @@ var Order = new Schema({
   status: {
     type: [{
       type: String,
-      enum: ['pending', 'confirmed']
+      enum: ['draft', 'confirmed']
     }],
-    default: ['pending']
+    default: ['draft']
   }
 });
 

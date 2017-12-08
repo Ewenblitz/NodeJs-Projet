@@ -1,3 +1,8 @@
+/**
+ * Mise en place du model pour les produit (Product)
+ * @alias ProductModel
+ * @author Ewen Lomer, Christopher Leccia, Rahpael Apruzzese
+ */
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 

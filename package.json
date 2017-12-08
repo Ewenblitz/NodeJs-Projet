@@ -8,7 +8,7 @@
     "build": "babel ./src --out-dir ./compile --copy-files",
     "eslint": "eslint ./src",
     "eslint-fix": "npm run eslint -- --fix",
-    "document": "jsdoc ./src -r -d ./documentation",
+    "comment": "jsdoc ./src -r -d ./documentation",
     "test": "mocha --compilers js:babel-core/register --recursive",
     "test-watch": "npm run test -- --watch"
   },
